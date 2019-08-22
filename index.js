@@ -78,7 +78,7 @@ var awsCredentials = new AWS.CognitoIdentityCredentials({
 var settings = {
   awsCredentials: awsCredentials,
   awsRegion: "us-east-1",
-  pollyVoiceId: "Matthew",
+  pollyVoiceId: "Brian",
   cacheSpeech: true
 }
 var kathy = ChattyKathy(settings);

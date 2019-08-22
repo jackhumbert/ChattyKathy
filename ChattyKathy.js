@@ -111,6 +111,7 @@ function ChattyKathy(settings) {
                 TextType: 'ssml',
                 Text: message,
                 SampleRate: '24000',
+                LanguageCode: "en-GB",
                 VoiceId: settings.pollyVoiceId
             }
             polly.synthesizeSpeech(params, function (error, data) {
