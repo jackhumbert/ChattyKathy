@@ -106,8 +106,11 @@ function ChattyKathy(settings) {
         return new Promise(function (successCallback, errorCallback) {
             var polly = new AWS.Polly();
             var params = {
+                Engine: 'neural',
                 OutputFormat: 'mp3',
+                TextType: 'ssml',
                 Text: message,
+                SampleRate: '24000',
                 VoiceId: settings.pollyVoiceId
             }
             polly.synthesizeSpeech(params, function (error, data) {
@@ -190,7 +193,7 @@ function ChattyKathy(settings) {
             throw "A valid AWS Region must be provided";
         }
         if (typeof settings.pollyVoiceId === 'undefined') {
-            settings.pollyVoiceId = "Amy";
+            settings.pollyVoiceId = "Justin";
         }
         if (typeof settings.cacheSpeech === 'undefined') {
             settings.cacheSpeech === true;

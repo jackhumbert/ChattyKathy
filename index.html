@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Lojban IPA Conversion & Speech Synthesis</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!--link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"-->
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="column">
+	    <h1>Lojban IPA Conversion & Speech Synthesis</h1>
+      </div>
+	  </div>
+    <div class="row">
+      <div class="column one-half">
+
+	<h2>Input</h2>
+    <textarea id="text" class="u-full-width" style="height:500px">ni'o la melbi ku prenu
+.i zvati le zdani
+.i zvati le sipna kumfa
+.i le zdani ku cmalu
+.i ku'i la melbi ku jinvi lo du'u xamgu
+ni'o pu sipna
+.i ca ku ku'i, la melbi ku na sipna
+.i djica lo nu citka kei gi'e klama le citka kumfa
+ni'o lu «.u'inai cizra» li'u se cusku la melbi
+.i catlu ro da gi'e ku'i viska no ka'e se citka
+.i lu «lo se citka ku mo?» li'u preti fi la melbi la melbi
+.i ba citka ma?</textarea><br />
+    <button onclick="speak();" class="button-primary u-full-width">speak</button>
+
+	</div>
+    <div class="column one-half">
+
+	<h2>IPA</h2>
+	<textarea id="ipa" class="u-full-width" style="height:200px"></textarea>
+
+	<h2>SSML</h2>
+	<textarea id="ssml" class="u-full-width" style="height:200px"></textarea>
+
+    <script src="aws-sdk-2.515.0.min.js"></script>
+    <script src="ChattyKathy.js"></script>
+    <script src="index.js"></script>
+
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
