@@ -1,22 +1,23 @@
 ﻿ph_lu = {
   "«": "",
+  "-": ".",
   "»": "",
   "?": "",
   ",": "ʔ",
   ".": "ʔ",
   " ": " ",
   "ˈ": "ˈ",
-  a: "a",
+  a: "ɑ",
   e: "ɛ",
   i: "i",
   o: "o",
   u: "u",
   y: "ə",
-  ai: "aj",
+  ai: "ɑj",
   ei: "ɛj",
   oi: "oj",
   au: "aw",
-  ia: "ja",
+  ia: "jɑ",
   ie: "jɛ",
   ii: "ji",
   io: "jo",
@@ -56,6 +57,10 @@ String.prototype.matchForm = function(form) {
   var regex = "^";
   var working = this.replace(/[\.\?»«]/, '');
   for (var f = 0; f < form.length; f++) {
+    if (form[f] == "?")
+      regex += ".";
+    if (form[f] == "*")
+      regex += ".*";
     if (form[f] == "C")
       regex += "[^aeiouy]";
     if (form[f] == "V")
@@ -105,13 +110,7 @@ function speak() {
         ph += 'ˈ';
       if ((words[w].matchForm("CVCV") || words[w].matchForm("CVCVV")) && (i == 0))
         ph += 'ˈ';
-      if (words[w].matchForm("CVCCV")) {
-        if (i == 0)
-          ph += 'ˈ';
-        if (i == 3)
-          ph += '.';
-      }
-      if (words[w].matchForm("CCVCV")) {
+      if (words[w].matchForm("CVCCV") || words[w].matchForm("CCVCV") || words[w].matchForm("CCVCVV") || words[w].matchForm("CVCCVV")) {
         if (i == 0)
           ph += 'ˈ';
         if (i == 3)
